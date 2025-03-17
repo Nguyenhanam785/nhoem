@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffe6f0; /* Hồng nhạt làm nền */
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+#container {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+}
+
+#startButton {
+    padding: 15px 30px;
+    font-size: 18px;
+    font-weight: bold;
+    color: white;
+    background-color: #ff80aa; /* Hồng đậm hơn cho nút */
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+}
+
+#startButton:hover {
+    background-color: #ff99bb; /* Hồng sáng hơn khi hover */
+}
+
+.message {
+    position: absolute;
+    width: 200px;
+    height: 120px;
+    background-color: #ff99bb; /* Hồng đậm hơn cho cửa sổ */
+    border-radius: 5px;
+    box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    animation: fadeOut 4s forwards;
+}
+
+/* Thanh tiêu đề giả lập như cửa sổ web */
+.message::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 20px;
+    background-color: #ff66a3; /* Hồng đậm hơn cho thanh tiêu đề */
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+/* Nút giả lập trên thanh tiêu đề (đóng, thu nhỏ, phóng to) */
+.message::after {
+    content: '● ● ●';
+    position: absolute;
+    top: 5px;
+    left: 10px;
+    font-size: 8px;
+    color: white;
+    letter-spacing: 5px;
+}
+
+/* Nội dung "Anh nhớ em" */
+.message span {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+@media (max-width: 600px) {
+    #startButton {
+        padding: 10px 20px;
+    }
+}
