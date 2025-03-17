@@ -17,6 +17,19 @@ body {
     height: 100vh;
 }
 
+#header {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 48px; /* Chữ to */
+    color: #ff66a3; /* Hồng đậm hơn */
+    font-weight: bold;
+    text-align: center;
+    z-index: 10;
+    transition: opacity 0.5s ease; /* Hiệu ứng mờ khi biến mất */
+}
+
 #startButton {
     padding: 15px 30px;
     font-size: 18px;
@@ -97,8 +110,12 @@ body {
         opacity: 0;
     }
 }
+
 @media (max-width: 600px) {
     #startButton {
         padding: 10px 20px;
+    }
+    #header {
+        font-size: 36px; /* Giảm kích thước trên màn hình nhỏ */
     }
 }

@@ -1,5 +1,6 @@
 const container = document.getElementById('container');
 const startButton = document.getElementById('startButton');
+const header = document.getElementById('header');
 let intervalId = null;
 
 function createMessage() {
@@ -26,14 +27,19 @@ function createMessage() {
 }
 
 startButton.addEventListener('click', () => {
-    // Ẩn nút sau khi bấm
+    // Ẩn nút và tiêu đề sau khi bấm
     startButton.style.display = 'none';
+    header.style.opacity = '0'; // Mờ dần
+    setTimeout(() => {
+        header.style.display = 'none'; // Ẩn hoàn toàn sau khi mờ
+    }, 500); // Đồng bộ với thời gian transition
 
     // Bắt đầu tạo thông điệp liên tục
     if (!intervalId) {
         intervalId = setInterval(createMessage, 300); // Tạo mới mỗi 300ms
     }
 });
+
 window.addEventListener('resize', () => {
     const messages = document.querySelectorAll('.message');
     messages.forEach(message => {
